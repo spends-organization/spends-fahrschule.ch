@@ -23,6 +23,7 @@ const Impressum: React.FC = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Kontakt</h2>
             <p className="mb-4">
+              Spend Izairi<br />
               Telefon: <a href="tel:+41764305658" className="text-blue-600 hover:text-blue-800">+41 76 430 56 58</a><br />
               E-Mail: <a href="mailto:info@spends-fahrschule.ch" className="text-blue-600 hover:text-blue-800">info@spends-fahrschule.ch</a>
             </p>
@@ -59,7 +60,7 @@ const Impressum: React.FC = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Logo und Markenzeichen</h2>
             <p className="mb-4">
-              Das Spend's Fahrschule Logo und alle damit verbundenen Markenzeichen sind Eigentum der Spend's Fahrschule.
+              Das "Spend's Fahrschule" Logo und alle damit verbundenen Markenzeichen sind Eigentum der Spend's Fahrschule.
             </p>
           </section>
 
