@@ -157,3 +157,65 @@ Spend's Fahrschule
 - Website: [spends-fahrschule.ch](https://spends-fahrschule.ch)
 - Email: info@spends-fahrschule.ch
 - Phone: +41 76 430 56 58
+
+## Server Maintenance
+
+The repository includes two maintenance scripts to help keep the server healthy and up-to-date:
+
+### Scripts Overview
+
+1. `server-maintenance.sh`: Main maintenance script that:
+   - Monitors disk space usage (warns if above 80%)
+   - Checks if Nginx is running and restarts if needed
+   - Installs security updates automatically
+   - Sends status emails to development.laki@gmail.com
+   - Logs all activities to `/var/log/server-maintenance.log`
+
+2. `setup-maintenance.sh`: One-time setup script that:
+   - Installs required packages (mailutils, postfix)
+   - Configures the mail server
+   - Sets up the maintenance directory
+   - Creates a weekly cron job
+
+### Installation
+
+1. Copy the scripts to your server:
+```bash
+scp server-maintenance.sh root@your-server-ip:/root/maintenance/
+scp setup-maintenance.sh root@your-server-ip:/root/
+```
+
+2. SSH into your server and run the setup:
+```bash
+ssh root@your-server-ip
+cd /root
+chmod +x setup-maintenance.sh
+./setup-maintenance.sh
+```
+
+3. During setup, when prompted for Postfix configuration:
+   - Choose "Internet Site"
+   - Use "spends-fahrschule.ch" as the system mail name
+
+### Schedule
+
+The maintenance script runs automatically every Sunday at 3 AM. You can check the schedule with:
+```bash
+crontab -l
+```
+
+### Logs and Monitoring
+
+- Maintenance logs: `/var/log/server-maintenance.log`
+- Status emails are sent to development.laki@gmail.com after each run
+- Email status types:
+  - SUCCESS: Everything is normal
+  - WARNING: Disk space is above 80%
+  - ERROR: Nginx was down or updates failed
+
+### Manual Run
+
+To run the maintenance script manually:
+```bash
+/root/maintenance/server-maintenance.sh
+```
