@@ -78,12 +78,7 @@ const PrivacyPolicy: React.FC = () => {
 
           <h3 className="text-xl font-semibold mt-6 mb-3">Hosting</h3>
           <p className="mb-4">
-            Unsere Website wird auf der Plattform Vercel gehostet. Diese bietet eine zuverlässige und schnelle Bereitstellung unserer Inhalte.
-          </p>
-
-          <h3 className="text-xl font-semibold mt-6 mb-3">Vercel</h3>
-          <p className="mb-4">
-            Unsere Website wird auf der Hosting-Plattform Vercel betrieben. Diese Technologie ermöglicht eine effiziente Bereitstellung unserer Inhalte durch automatische Skalierung und Optimierung. Die Plattform unterstützt moderne Webtechnologien und gewährleistet eine schnelle Ladezeit sowie hohe Verfügbarkeit unserer Website.
+            Unsere Website wird auf unseren eigenen Servern gehostet. Diese bieten eine zuverlässige und schnelle Bereitstellung unserer Inhalte.
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Änderungen</h2>
