@@ -63,7 +63,7 @@ const PrivacyPolicy: React.FC = () => {
 
           <h4 className="text-lg font-semibold mt-4 mb-2">Zu welchem Zweck verarbeiten wir die Daten?</h4>
           <p className="mb-4">
-            Die IP-Adresse wird verarbeitet, um den groben Standort des Besuchers zu analysieren, damit beim Webseitenaufruf der richtige Abschnitt angezeigt wird. Die technischen Informationen werden verarbeitet, damit die Karte auf allen Geräten passend angezeigt werden kann. Ihre Interaktionsdaten werden erhoben, damit die Karte interaktiv genützt werden kann und damit wir die Kartennutzung verbessern können. Sofern Sie mit ihrem Google-Konto angemeldet sind, werden die Daten zwischen Ihren Geräten synchronisiert. Beispielsweise werden Markierungen und geplante Routen zwischen den Geräten synchronisiert.
+            Die IP-Adresse wird verarbeitet, um den groben Standort des Besuchers zu analysieren, damit beim Webseitenaufruf der richtige Abschnitt angezeigt wird. Die technischen Informationen werden verarbeitet damit die Karte auf allen Geräten passend angezeigt werden kann. Ihre Interaktionsdaten werden erhoben, damit die Karte interaktiv genützt werden kann und damit wir die Kartennutzung verbessern können. Sofern Sie mit ihrem Google-Konto angemeldet sind, werden die Daten zwischen Ihren Geräten synchronisiert. Beispielsweise werden Markierungen und geplante Routen zwischen den Geräten synchronisiert.
           </p>
 
           <h3 className="text-xl font-semibold mt-6 mb-3">Google Web Fonts</h3>
