@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
           const packageInfo = JSON.parse(decodeURIComponent(hash.split('?package=')[1]));
           setSelectedPackage(packageInfo);
         } catch (e) {
-          console.error('Failed to parse package info:', e);
+          setSelectedPackage(null);
         }
       } else {
         setSelectedPackage(null);

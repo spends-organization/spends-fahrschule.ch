@@ -11,7 +11,6 @@ const Index: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.log('Index component mounted');
     // Update page title
     document.title = "Spend's Fahrschule - Dein Weg zum Führerschein";
 
