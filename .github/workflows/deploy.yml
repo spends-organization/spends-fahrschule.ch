@@ -40,7 +40,7 @@ jobs:
           
       - name: Deploy to VPS
         run: |
-          rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/spends-fahrschule.ch/
+          rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/your-app/
           
       - name: Restart Nginx
         run: |
