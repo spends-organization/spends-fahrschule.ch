@@ -19,9 +19,6 @@ jobs:
           node-version: '18'
           cache: 'npm'
       
-      - name: Install sshpass
-        run: sudo apt-get install -y sshpass
-          
       - name: Install dependencies
         run: npm ci
         
@@ -37,8 +34,8 @@ jobs:
           
       - name: Deploy to VPS
         run: |
-          sshpass -p "${{ secrets.SERVER_SUDO_PASSWORD }}" rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/your-app/
+          rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/your-app/
           
-      - name: Restart Nginx (if needed)
+      - name: Restart Nginx
         run: |
-          sshpass -p "${{ secrets.SERVER_SUDO_PASSWORD }}" ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "sudo systemctl restart nginx" 
+          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "systemctl restart nginx" 
