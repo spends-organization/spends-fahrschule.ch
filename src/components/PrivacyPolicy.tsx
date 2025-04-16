@@ -82,7 +82,7 @@ const PrivacyPolicy: React.FC = () => {
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Änderungen</h2>
-          <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen. Die jeweils aktuelle Version finden Sie auf der Website.</p>
+          <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen. Die jeweils aktuelle Version finden Sie auf der Website von uns.</p>
         </div>
       </div>
     </Layout>
