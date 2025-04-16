@@ -78,7 +78,7 @@ const PrivacyPolicy: React.FC = () => {
 
           <h3 className="text-xl font-semibold mt-6 mb-3">Hosting</h3>
           <p className="mb-4">
-            Unsere Website wird auf unseren eigenen Servern gehostet. Diese bieten eine zuverlässige und schnelle Bereitstellung unserer Inhalte.
+            Unsere Website wird auf unserem eigenem Servern gehostet. Diese bieten eine zuverlässige und schnelle Bereitstellung unserer Inhalte.
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Änderungen</h2>
