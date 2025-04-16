@@ -10,7 +10,7 @@ const PrivacyPolicy: React.FC = () => {
 
         <div className="prose prose-lg max-w-none">
           <p className="mb-6">
-            Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Datenschutzerklärung informiert Sie über die Erhebung, Verarbeitung und Nutzung Ihrer Daten bei der Nutzung unserer Website. Wir aktualisieren diese Erklärung regelmässig, um Ihnen stets transparente Informationen zu bieten.
+            Der Schutz Ihrer persönlichen Daten ist uns ein sehr wichtiges Anliegen. Diese Datenschutzerklärung informiert Sie über die Erhebung, Verarbeitung und Nutzung Ihrer Daten bei der Nutzung unserer Website. Wir aktualisieren diese Erklärung regelmässig, um Ihnen stets transparente Informationen zu bieten.
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Erfasste Daten</h2>
