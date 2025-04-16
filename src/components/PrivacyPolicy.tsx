@@ -73,7 +73,7 @@ const PrivacyPolicy: React.FC = () => {
 
           <h4 className="text-lg font-semibold mt-4 mb-2">Verwendung von Google Web Fonts</h4>
           <p className="mb-4">
-            Wir setzen Google Web Fonts ein, um eine einheitliche und professionelle Darstellung unserer Website zu gewährleisten. Die Schriftarten werden direkt von Google-Servern geladen und in Ihrem Browser zwischengespeichert.
+            Wir setzen Google Web Fonts ein, um eine einheitliche und professionelle Darstellung unserer Website zu gewährleisten. Die Schriftarten werden direkt von Google Servern geladen und in Ihrem Browser zwischengespeichert.
           </p>
 
           <h3 className="text-xl font-semibold mt-6 mb-3">Hosting</h3>
