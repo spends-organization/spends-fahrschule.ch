@@ -1,0 +1,44 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build project
+        run: npm run build
+        
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+          
+      - name: Deploy to VPS
+        run: |
+          sshpass -p "${{ secrets.SERVER_SUDO_PASSWORD }}" rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/your-app/
+          
+      - name: Restart Nginx (if needed)
+        run: |
+          sshpass -p "${{ secrets.SERVER_SUDO_PASSWORD }}" ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "sudo systemctl restart nginx" 
