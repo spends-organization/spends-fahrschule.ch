@@ -107,8 +107,10 @@ const Contact: React.FC = () => {
                 <div className="flex items-start">
                   <Mail className="h-5 w-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900">E-Mail</p>
-                    <p className="text-gray-600">{contact.email}</p>
+									<p className="font-medium text-gray-900">E-Mail</p>
+										<p className="text-gray-600 break-all">
+  {contact.email.replace('@', '\u200B@')}
+</p>
                   </div>
                 </div>
                 
