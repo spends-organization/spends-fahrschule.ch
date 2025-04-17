@@ -1,7 +1,7 @@
 export const contact = {
   phone: "+41 76 430 56 58",
   whatsapp: "41764305658", // WhatsApp number without spaces or special characters
-  email: "info@spends-fahrschule.ch",
+  email: "info.spendsfahrschule@gmail.com",
   address: {
     street: "Zürcherstrasse 46",
     city: "8400 Winterthur",
