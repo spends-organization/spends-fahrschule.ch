@@ -25,7 +25,7 @@ const Impressum: React.FC = () => {
             <p className="mb-4">
               Spend Izairi<br />
               Telefon: <a href="tel:+41764305658" className="text-blue-600 hover:text-blue-800">+41 76 430 56 58</a><br />
-              E-Mail: <a href="mailto:info@spends-fahrschule.ch" className="text-blue-600 hover:text-blue-800">info@spends-fahrschule.ch</a>
+              E-Mail: <a href="mailto:info.spendsfahrschule@gmail.com" className="text-blue-600 hover:text-blue-800">info.spendsfahrschule@gmail.com</a>
             </p>
           </section>
 
