@@ -76,6 +76,38 @@ const PrivacyPolicy: React.FC = () => {
             Wir setzen Google Web Fonts ein, um eine einheitliche und professionelle Darstellung unserer Website zu gewährleisten. Die Schriftarten werden direkt von Google Servern geladen und in Ihrem Browser zwischengespeichert.
           </p>
 
+          <h3 className="text-xl font-semibold mt-6 mb-3">Google Analytics</h3>
+          <p className="mb-4">
+            Wir verwenden Google Analytics, einen Webanalysedienst von Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA), um die Nutzung unserer Website zu analysieren und zu verbessern.
+          </p>
+
+          <h4 className="text-lg font-semibold mt-4 mb-2">Verwendung von Google Analytics</h4>
+          <p className="mb-4">
+            Google Analytics verwendet Cookies, um Informationen über Ihre Nutzung unserer Website zu sammeln. Diese Informationen werden verwendet, um:
+          </p>
+          <ul className="list-disc pl-6 mb-4">
+            <li>Die Nutzung unserer Website zu analysieren</li>
+            <li>Berichte über die Websiteaktivitäten zu erstellen</li>
+            <li>Weitere mit der Websitenutzung verbundene Dienstleistungen zu erbringen</li>
+          </ul>
+
+          <h4 className="text-lg font-semibold mt-4 mb-2">Erfasste Informationen</h4>
+          <p className="mb-4">
+            Google Analytics erfasst folgende Daten:
+          </p>
+          <ul className="list-disc pl-6 mb-4">
+            <li>Besuchte Seiten</li>
+            <li>Verweildauer auf den Seiten</li>
+            <li>Verwendete Geräte und Browser</li>
+            <li>Geografische Herkunft</li>
+            <li>Verweisquellen (wie Sie auf unsere Website gelangt sind)</li>
+          </ul>
+
+          <h4 className="text-lg font-semibold mt-4 mb-2">Datenschutz und Cookies</h4>
+          <p className="mb-4">
+            Die durch Google Analytics erzeugten Informationen über Ihre Nutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Die IP-Adresse wird durch Google Analytics anonymisiert, sodass ein Personenbezug nicht mehr möglich ist.
+          </p>
+
           <h3 className="text-xl font-semibold mt-6 mb-3">Hosting</h3>
           <p className="mb-4">
             Unsere Website wird auf unserem eigenem Servern gehostet. Diese bieten eine schnelle und zuverlässige Bereitstellung der Inhalte.
