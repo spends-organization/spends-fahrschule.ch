@@ -31,8 +31,12 @@ const Hero: React.FC = () => {
               />
             </div>
             <div>
-              <p className="text-lg md:text-xl text-gray-900 font-semibold mb-4 max-w-2xl">
-                Professionelle Fahrlehrer, zuverlässige Fahrzeuge und flexible Termine - bei uns wird der Führerschein zum Erfolg!
+              <h1 className="sr-only">
+                Fahrschule Winterthur
+              </h1>
+              <p className="text-lg md:text-xl text-gray-80 font-semibold mb-4 max-w-2xl">
+                Professionelle Fahrausbildung in Winterthur mit modernen Fahrzeugen, 
+                erfahrenen Fahrlehrern und flexiblen Terminen - bei uns wird der Führerschein zum Erfolg!
               </p>
 
               {/* Features */}
@@ -51,12 +55,12 @@ const Hero: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="#pakete"
                   className="inline-flex items-center justify-center px-6 py-3 bg-blue-500 text-white font-medium rounded-full transition-all hover:bg-blue-600 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-blue-500/20"
                 >
-                  Jetzt Kontaktieren
+                  Jetzt Anmleden
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
                 <a

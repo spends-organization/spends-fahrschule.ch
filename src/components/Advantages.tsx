@@ -35,7 +35,7 @@ const Advantages: React.FC = () => {
     {
       icon: <Users className="h-6 w-6 text-blue-500" />,
       title: "Geduldige und sympathische Fahrlehrer",
-      description: "Unsere Fahrlehrer sind nicht nur qualifiziert, sondern auch geduldig und unterstützend."
+      description: "Unsere Fahrlehrer aus Winterthur sind nicht nur qualifiziert, sondern auch geduldig und unterstützend."
     },
     {
       icon: <Calendar className="h-6 w-6 text-blue-500" />,
@@ -58,7 +58,7 @@ const Advantages: React.FC = () => {
     <section id="vorteile" className="section-padding bg-gray-50">
       <div className="container mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Warum Spend's Fahrschule wählen?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Warum Spend's Fahrschule in Winterthur?</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Wir bieten dir eine erstklassige Fahrausbildung mit einer persönlichen Note und dem Ziel, dich zu einem sicheren und selbstbewussten Fahrer zu machen.
           </p>

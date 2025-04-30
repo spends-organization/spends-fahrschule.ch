@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-gray-900">Spend's Fahrschule</h3>
+            <h3 className="text-xl font-bold mb-4 text-gray-900">Spend's Fahrschule Winterthur</h3>
             <p className="text-gray-600 mb-4">
               Dein zuverlässiger Partner auf dem Weg zum Führerschein.
             </p>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
-          <p>&copy; {currentYear} Spend's Fahrschule. Alle Rechte vorbehalten.</p>
+          <p>&copy; {currentYear} Spend's Fahrschule Winterthur. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>
