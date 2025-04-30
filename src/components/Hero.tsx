@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             <div className="mb-4">
               <img 
                 src="/official-logo.png" 
-                alt="Spend Fahrschule Logo" 
+                alt="Spend's Fahrschule Winterthur Logo" 
                 className="brightness-100 w-[400px] md:w-[800px] h-[200px] md:h-[400px] object-contain"
                 loading="eager"
                 width={800}
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
                   href="#pakete"
                   className="inline-flex items-center justify-center px-6 py-3 bg-blue-500 text-white font-medium rounded-full transition-all hover:bg-blue-600 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-blue-500/20"
                 >
-                  Jetzt Anmleden
+                  Jetzt Pakete ansehen
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
                 <a

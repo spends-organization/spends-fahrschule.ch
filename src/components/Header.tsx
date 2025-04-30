@@ -80,6 +80,12 @@ const Header: React.FC = () => {
               Pakete
             </button>
             <button
+              onClick={() => handleNavigation('faq')}
+              className="text-gray-800 hover:text-blue-600 transition-colors"
+            >
+              FAQ
+            </button>
+            <button
               onClick={() => handleNavigation('kontakt')}
               className="text-gray-800 hover:text-blue-600 transition-colors"
             >
@@ -89,7 +95,7 @@ const Header: React.FC = () => {
               onClick={() => handleNavigation('pakete')}
               className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
             >
-              Jetzt Kontaktieren
+              Jetzt Pakete ansehen
             </button>
           </nav>
 
@@ -126,6 +132,12 @@ const Header: React.FC = () => {
               Pakete
             </button>
             <button
+              onClick={() => handleNavigation('faq')}
+              className="text-gray-800 hover:text-blue-600 transition-colors text-lg"
+            >
+              FAQ
+            </button>
+            <button
               onClick={() => handleNavigation('kontakt')}
               className="text-gray-800 hover:text-blue-600 transition-colors text-lg"
             >
@@ -135,7 +147,7 @@ const Header: React.FC = () => {
               onClick={() => handleNavigation('pakete')}
               className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors text-lg w-full"
             >
-              Jetzt Kontaktieren
+              Jetzt Pakete ansehen
             </button>
           </div>
         </nav>

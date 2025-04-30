@@ -85,7 +85,7 @@ const Contact: React.FC = () => {
 
           <AnimatedSection className="order-1 lg:order-2" animation="fade-in-up">
             <div className="bg-white rounded-xl p-8 h-full shadow-lg border border-gray-200">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Spend's Fahrschule</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Spend's Fahrschule Winterthur</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
