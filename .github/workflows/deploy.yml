@@ -12,7 +12,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+          ref: main       # Explicitly checkout main branch
+      
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
