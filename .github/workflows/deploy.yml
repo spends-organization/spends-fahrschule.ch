@@ -45,6 +45,8 @@ jobs:
         run: |
           rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/your-app/
           
-      - name: Restart Nginx
+      - name: Clear Nginx Cache and Restart
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "systemctl restart nginx" 
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "
+            sudo rm -rf /var/cache/nginx/* &&
+            sudo systemctl restart nginx" 
