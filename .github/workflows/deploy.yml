@@ -12,10 +12,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Fetch all history for all branches and tags
-          ref: main       # Explicitly checkout main branch
-      
+        
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -43,10 +40,15 @@ jobs:
           
       - name: Deploy to VPS
         run: |
+          # Ensure target directory exists and has correct permissions
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "mkdir -p /var/www/your-app && chmod -R 755 /var/www/your-app"
+          
+          # Deploy files
           rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/your-app/
           
-      - name: Clear Nginx Cache and Restart
+      - name: Clear Cache and Restart Nginx
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "
             sudo rm -rf /var/cache/nginx/* &&
+            sudo rm -rf /var/lib/nginx/cache/* &&
             sudo systemctl restart nginx" 
