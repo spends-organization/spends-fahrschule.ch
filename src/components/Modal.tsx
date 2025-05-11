@@ -3,6 +3,10 @@ import { X, CheckCircle2, ArrowRight, Shield, Clock } from 'lucide-react';
 import type { Package } from '@/types';
 import { contact } from '@/config/contact';
 
+declare global {
+  function gtag(...args: any[]): void;
+}
+
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -69,6 +73,9 @@ Können wir einen Termin für die Fahrstunden vereinbaren?`;
             <div className="flex flex-col gap-3 pt-2">
               <a
                 href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`}
+                onClick={(e) => {
+                  gtag('event', 'conversion', {'send_to': 'AW-17059213090/ZmIDCPvelsYaEKLeu8Y_'});
+                }}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-green-600 to-green-700 px-6 py-3 text-base font-medium text-white shadow-lg transition-all hover:from-green-700 hover:to-green-800 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
