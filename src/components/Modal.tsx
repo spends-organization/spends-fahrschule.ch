@@ -5,6 +5,7 @@ import { contact } from '@/config/contact';
 
 declare global {
   function gtag(...args: any[]): void;
+  function gtag_report_conversion(url: string): boolean;
 }
 
 interface ModalProps {
@@ -74,7 +75,8 @@ Können wir einen Termin für die Fahrstunden vereinbaren?`;
               <a
                 href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`}
                 onClick={(e) => {
-                  gtag('event', 'conversion', {'send_to': 'AW-17059213090/ZmIDCPvelsYaEKLeu8Y_'});
+                  e.preventDefault();
+                  gtag_report_conversion(e.currentTarget.href);
                 }}
                 target="_blank"
                 rel="noopener noreferrer"
