@@ -85,14 +85,19 @@ const Contact: React.FC = () => {
 
           <AnimatedSection className="order-1 lg:order-2" animation="fade-in-up">
             <div className="bg-white rounded-xl p-8 h-full shadow-lg border border-gray-200">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Spend's Fahrschule Winterthur</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Spend's Fahrschule - Ihre Region</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
                   <MapPin className="h-5 w-5 text-blue-500 mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900">Adresse</p>
-                    <p className="text-gray-600">{contact.address.full}</p>
+                    <p className="font-medium text-gray-900">Standorte</p>
+                    <p className="text-gray-600">Winterthur, Effretikon, Bassersdorf und Frauenfeld</p>
+                    <p className="text-gray-600 mt-2">
+                      {contact.address.full}
+                      <br />
+                      <span className="text-sm text-gray-500">(VKU nur in Winterthur)</span>
+                    </p>
                   </div>
                 </div>
                 

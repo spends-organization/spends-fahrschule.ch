@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             <div className="mb-4">
               <img 
                 src="/official-logo.png" 
-                alt="Spend's Fahrschule Winterthur Logo" 
+                alt="Spend's Fahrschule Logo" 
                 className="brightness-100 w-[400px] md:w-[800px] h-[200px] md:h-[400px] object-contain"
                 loading="eager"
                 width={800}
@@ -32,10 +32,10 @@ const Hero: React.FC = () => {
             </div>
             <div>
               <h1 className="sr-only">
-                Fahrschule Winterthur
+                Fahrschule Winterthur & Region
               </h1>
               <p className="text-lg md:text-xl text-gray-80 font-semibold mb-4 max-w-2xl">
-                Professionelle Fahrausbildung in Winterthur mit modernen Fahrzeugen, 
+                Professionelle Fahrausbildung in Winterthur, Effretikon, Bassersdorf und Frauenfeld mit modernen Fahrzeugen, 
                 erfahrenen Fahrlehrern und flexiblen Terminen - bei uns wird der Führerschein zum Erfolg!
               </p>
 

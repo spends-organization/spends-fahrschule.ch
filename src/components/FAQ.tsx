@@ -41,12 +41,12 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, delay }) => {
 const FAQ: React.FC = () => {
   const faqs = [
     {
-      question: "🕒 Wie viele Fahrstunden benötige ich für den Führerschein in Winterthur?",
-      answer: "Die Anzahl der benötigten Fahrstunden variiert je nach Vorkenntnissen und Lernfortschritt. Im Durchschnitt benötigen Fahrschüler in Winterthur zwischen 15-20 Fahrstunden. Wir bei Spend's Fahrschule passen die Ausbildung individuell an Ihre Bedürfnisse an."
+      question: "🕒 Wie viele Fahrstunden benötige ich für den Führerschein?",
+      answer: "Die Anzahl der benötigten Fahrstunden variiert je nach Vorkenntnissen und Lernfortschritt. Im Durchschnitt benötigen Fahrschüler zwischen 15-20 Fahrstunden. Wir bei Spend's Fahrschule passen die Ausbildung individuell an Ihre Bedürfnisse an."
     },
     {
-      question: "🎯 Wie läuft die praktische Fahrprüfung in Winterthur ab?",
-      answer: "Die praktische Fahrprüfung in Winterthur wird vom Strassenverkehrsamt durchgeführt. Wir bereiten Sie intensiv auf die Prüfung vor, inklusive der typischen Prüfungsrouten in Winterthur. Die Prüfung dauert etwa 45 Minuten und umfasst verschiedene Verkehrssituationen."
+      question: "🎯 Wie läuft die praktische Fahrprüfung ab?",
+      answer: "Die praktische Fahrprüfung wird vom Strassenverkehrsamt durchgeführt. Wir bereiten Sie intensiv auf die Prüfung vor, inklusive der typischen Prüfungsrouten. Die Prüfung dauert etwa 45 Minuten und umfasst verschiedene Verkehrssituationen."
     },
     {
       question: "📅 Wie oft sollte ich Fahrstunden nehmen?",
@@ -59,11 +59,11 @@ const FAQ: React.FC = () => {
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Häufig gestellte Fragen zu Spend's Fahrschule Winterthur
+            Häufig gestellte Fragen zu Spend's Fahrschule
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Hier finden Sie Antworten auf die wichtigsten Fragen zur Fahrausbildung 
-            bei Spend's Fahrschule in Winterthur.
+            bei Spend's Fahrschule in Winterthur, Effretikon, Bassersdorf und Frauenfeld.
           </p>
         </div>
 
