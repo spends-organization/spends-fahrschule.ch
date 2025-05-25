@@ -136,7 +136,12 @@ const Packages: React.FC = () => {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-blue-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 whitespace-nowrap">{singleLessons.trial.title} - {singleLessons.trial.price}</span>
+                  <span className="text-gray-700 whitespace-nowrap">
+                    {singleLessons.trial.title} - {singleLessons.trial.price}
+                    {singleLessons.trial.originalPrice && (
+                      <span className="text-gray-500 line-through ml-2">{singleLessons.trial.originalPrice}</span>
+                    )}
+                  </span>
                 </li>
               </ul>
             </div>

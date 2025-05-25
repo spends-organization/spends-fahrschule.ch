@@ -59,7 +59,8 @@ export const singleLessons = {
   },
   trial: {
     title: "Probelektion",
-    price: "CHF\u00A050"
+    price: "Gratis",
+    originalPrice: "CHF\u00A050"
   }
 };
 

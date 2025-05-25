@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Car, GraduationCap, Clock } from 'lucide-react';
+import { ArrowRight, Car, GraduationCap, Clock, CheckCircle } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -52,6 +52,10 @@ const Hero: React.FC = () => {
                 <div className="flex items-center gap-2 text-gray-800">
                   <Clock className="h-5 w-5 text-blue-600" />
                   <span>Flexible Termine</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-800">
+                  <CheckCircle className="h-5 w-5 text-blue-600" />
+                  <span>Kostenlose Probelektion</span>
                 </div>
               </div>
 
