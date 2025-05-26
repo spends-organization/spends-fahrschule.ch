@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Car, GraduationCap, Clock, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -56,6 +57,26 @@ const Hero: React.FC = () => {
                 <div className="flex items-center gap-2 text-gray-800">
                   <CheckCircle className="h-5 w-5 text-blue-600" />
                   <span>Kostenlose Probelektion</span>
+                </div>
+              </div>
+
+              {/* VKU Section */}
+              <div className="bg-blue-50 rounded-lg p-6 mb-6">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <GraduationCap className="h-8 w-8 text-blue-600" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Verkehrskundeunterricht (VKU)</h3>
+                      <p className="text-sm text-gray-600">Professionelle Ausbildung in Winterthur</p>
+                    </div>
+                  </div>
+                  <Link
+                    to="/vku"
+                    className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                  >
+                    VKU Termin buchen
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </div>
               </div>
 
