@@ -1,19 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Layout from '@/components/Layout';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Calendar } from 'lucide-react';
 
 const VKUPage: React.FC = () => {
-  useEffect(() => {
-    // Load TidyCal script
-    const script = document.createElement('script');
-    script.src = 'https://asset-tidycal.b-cdn.net/js/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (iframeRef.current) {
+        const height = window.innerHeight - 300; // Subtract some space for header and padding
+        iframeRef.current.style.height = `${height}px`;
+      }
+    };
+
+    // Initial resize
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
     return () => {
-      // Cleanup script on component unmount
-      document.body.removeChild(script);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -50,8 +59,15 @@ const VKUPage: React.FC = () => {
                   Wählen Sie einen passenden Termin für Ihren Verkehrskundeunterricht
                 </p>
               </div>
-              
-              <div className="tidycal-embed" data-path="lazarpet/vku"></div>
+
+              <iframe 
+                ref={iframeRef}
+                src="https://www.vku-pgs.asa.ch/de/public/coursegroup/VktVXzYzNzI=/1/VKU"
+                className="w-full border-0 transition-all duration-300"
+                title="VKU Booking"
+                style={{ minHeight: '90vh', maxHeight: '100vh', overflow: 'auto' }}
+                scrolling="yes"
+              />
             </div>
           </AnimatedSection>
         </div>
