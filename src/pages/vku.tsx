@@ -58,6 +58,11 @@ const VKUPage: React.FC = () => {
                 </AnimatedSection>
               ))}
             </div>
+            <div className="flex justify-center mb-8">
+              <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold text-lg md:text-xl px-6 py-2 rounded-full shadow-md border border-yellow-200">
+                Preis: CHF 149
+              </span>
+            </div>
             <AnimatedSection className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl p-8 text-center shadow-2xl mb-8">
               <h2 className="text-2xl font-bold mb-2 text-white drop-shadow">Jetzt VKU-Termin sichern</h2>
               <p className="text-blue-100 mb-4">Sichere dir deinen Platz in unserem VKU-Kurs über das untenstehende Formular.</p>

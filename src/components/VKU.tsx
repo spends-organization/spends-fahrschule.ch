@@ -55,6 +55,11 @@ const VKU: React.FC = () => {
             </AnimatedSection>
           ))}
         </div>
+        <div className="flex justify-center mb-10 md:mb-16">
+          <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold text-lg md:text-xl px-6 py-2 rounded-full shadow-md border border-yellow-200">
+            Preis: CHF 149
+          </span>
+        </div>
 
         <AnimatedSection className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl p-10 text-center shadow-2xl">
           <div className="max-w-3xl mx-auto">
