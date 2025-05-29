@@ -1,34 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Layout from '@/components/Layout';
 import AnimatedSection from '@/components/AnimatedSection';
 import { Calendar } from 'lucide-react';
 
+const INFO_SECTION_HEIGHT = 200; // px, adjust as needed
+
 const VKUPage: React.FC = () => {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (iframeRef.current) {
-        const height = window.innerHeight - 300; // Subtract some space for header and padding
-        iframeRef.current.style.height = `${height}px`;
-      }
-    };
-
-    // Initial resize
-    handleResize();
-
-    // Add resize listener
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50" style={{ margin: 0, padding: 0 }}>
         {/* Hero Section */}
         <div className="bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -47,29 +27,28 @@ const VKUPage: React.FC = () => {
         </div>
 
         {/* Booking Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <AnimatedSection>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="text-center mb-8">
-                <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                  VKU Termin buchen
-                </h2>
-                <p className="text-gray-600">
-                  Wählen Sie einen passenden Termin für Ihren Verkehrskundeunterricht
-                </p>
-              </div>
-
-              <iframe 
-                ref={iframeRef}
-                src="https://www.vku-pgs.asa.ch/de/public/coursegroup/VktVXzYzNzI=/1/VKU"
-                className="w-full border-0 transition-all duration-300"
-                title="VKU Booking"
-                style={{ minHeight: '90vh', maxHeight: '100vh', overflow: 'auto' }}
-                scrolling="yes"
-              />
+            <div className="text-center mb-8">
+              <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                VKU Termin buchen
+              </h2>
+              <p className="text-gray-600">
+                Wählen Sie einen passenden Termin für Ihren Verkehrskundeunterricht
+              </p>
             </div>
           </AnimatedSection>
+        </div>
+
+        {/* Responsive Full-Viewport Iframe */}
+        <div style={{ width: '100vw', height: `calc(100vh - ${INFO_SECTION_HEIGHT}px)`, margin: 0, padding: 0, overflow: 'hidden' }}>
+          <iframe
+            src="https://www.vku-pgs.asa.ch/de/public/coursegroup/VktVXzYzNzI=/1/VKU"
+            title="VKU Booking"
+            style={{ width: '100vw', height: '100%', border: 'none', overflow: 'auto', display: 'block' }}
+            scrolling="yes"
+          />
         </div>
       </div>
     </Layout>

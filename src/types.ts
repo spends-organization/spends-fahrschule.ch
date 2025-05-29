@@ -6,7 +6,7 @@ export interface Package {
   features: string[];
   popular?: boolean;
   duration?: string;
-}
+} 
 
 export interface BookingSlot {
   id: string;
