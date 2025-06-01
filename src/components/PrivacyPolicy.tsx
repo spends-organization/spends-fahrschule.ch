@@ -6,7 +6,7 @@ const PrivacyPolicy: React.FC = () => {
     <Layout>
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <h1 className="text-4xl font-bold mb-8">Datenschutzerklärung</h1>
-        <p className="text-gray-600 mb-8">Stand: 4. April 2025</p>
+        <p className="text-gray-600 mb-8">Stand: 1. Juni 2025</p>
 
         <div className="prose prose-lg max-w-none">
           <p className="mb-6">
