@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Car, GraduationCap, Clock, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -35,16 +36,11 @@ const Hero: React.FC = () => {
                 Fahrschule Winterthur & Region
               </h1>
               <p className="text-lg md:text-xl text-gray-80 font-semibold mb-4 max-w-2xl">
-                Professionelle Fahrausbildung in Winterthur, Effretikon, Bassersdorf und Frauenfeld mit modernen Fahrzeugen, 
-                erfahrenen Fahrlehrern und flexiblen Terminen - bei uns wird der Führerschein zum Erfolg!
+                Professionelle Fahrausbildung in Winterthur, Effretikon, Bassersdorf und Frauenfeld - bei uns wird der Führerschein zum Erfolg!
               </p>
 
               {/* Features */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                <div className="flex items-center gap-2 text-gray-800">
-                  <GraduationCap className="h-5 w-5 text-blue-600" />
-                  <span>Erfahrene Fahrlehrer</span>
-                </div>
                 <div className="flex items-center gap-2 text-gray-800">
                   <Car className="h-5 w-5 text-blue-600" />
                   <span>Moderne Fahrzeuge</span>
@@ -59,6 +55,26 @@ const Hero: React.FC = () => {
                 </div>
               </div>
 
+              {/* VKU Section */}
+              <div className="bg-blue-50 rounded-lg p-6 mb-6">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <GraduationCap className="h-8 w-8 text-blue-600" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Verkehrskundeunterricht (VKU)</h3>
+                      <p className="text-sm text-gray-600">Professionelle Ausbildung in Winterthur</p>
+                    </div>
+                  </div>
+                  <Link
+                    to="/vku"
+                    className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                  >
+                    VKU Termin buchen
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="#pakete"
@@ -66,12 +82,6 @@ const Hero: React.FC = () => {
                 >
                   Jetzt Pakete ansehen
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-                <a
-                  href="#kontakt"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-gray-100 text-gray-900 font-medium rounded-full border border-gray-200 transition-all hover:bg-gray-200 hover:translate-y-[-2px] hover:shadow-lg"
-                >
-                  Mehr Infos
                 </a>
               </div>
             </div>

@@ -113,6 +113,12 @@ const PrivacyPolicy: React.FC = () => {
             Unsere Website wird auf unserem eigenem Servern gehostet. Diese bieten eine schnelle und zuverlässige Bereitstellung der Inhalte.
           </p>
 
+          <h3 className="text-xl font-semibold mt-6 mb-3">Buchungssystem von kyberna.ch</h3>
+          <p className="mb-4">
+            Für die Online-Buchung von Verkehrskundeunterricht (VKU) nutzen wir das Buchungssystem der Firma <strong>kyberna AG</strong> (www.kyberna.ch),
+            Fürst-Franz-Josef-Strasse 5, 9490 Vaduz, Fürstentum Liechtenstein. Bei der Nutzung des Buchungsformulars werden die von Ihnen eingegebenen Daten direkt an kyberna AG übermittelt und dort verarbeitet. Weitere Informationen zum Datenschutz finden Sie auf der Website von kyberna AG.
+          </p>
+
           <h2 className="text-2xl font-bold mt-8 mb-4">Änderungen</h2>
           <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen. Die jeweils aktuelle Version finden Sie auf der Website von uns.</p>
         </div>

@@ -80,6 +80,12 @@ const Header: React.FC = () => {
               Pakete
             </button>
             <button
+              onClick={() => handleNavigation('vku')}
+              className="text-gray-800 hover:text-blue-600 transition-colors"
+            >
+              VKU
+            </button>
+            <button
               onClick={() => handleNavigation('faq')}
               className="text-gray-800 hover:text-blue-600 transition-colors"
             >
@@ -97,6 +103,12 @@ const Header: React.FC = () => {
             >
               Jetzt Pakete ansehen
             </button>
+            <Link
+              to="/vku"
+              className="bg-gray-100 text-gray-900 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors border border-gray-200"
+            >
+              VKU Termin buchen
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -118,37 +130,50 @@ const Header: React.FC = () => {
         style={{ top: '80px' }}
       >
         <nav className="container mx-auto px-4 py-8">
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col items-center space-y-6">
             <button
               onClick={() => handleNavigation('vorteile')}
-              className="text-gray-800 hover:text-blue-600 transition-colors text-lg"
+              className="text-gray-800 hover:text-blue-600 transition-colors text-lg w-full text-center"
             >
               Vorteile
             </button>
             <button
               onClick={() => handleNavigation('pakete')}
-              className="text-gray-800 hover:text-blue-600 transition-colors text-lg"
+              className="text-gray-800 hover:text-blue-600 transition-colors text-lg w-full text-center"
             >
               Pakete
             </button>
             <button
+              onClick={() => handleNavigation('vku')}
+              className="text-gray-800 hover:text-blue-600 transition-colors text-lg w-full text-center"
+            >
+              VKU
+            </button>
+            <button
               onClick={() => handleNavigation('faq')}
-              className="text-gray-800 hover:text-blue-600 transition-colors text-lg"
+              className="text-gray-800 hover:text-blue-600 transition-colors text-lg w-full text-center"
             >
               FAQ
             </button>
             <button
               onClick={() => handleNavigation('kontakt')}
-              className="text-gray-800 hover:text-blue-600 transition-colors text-lg"
+              className="text-gray-800 hover:text-blue-600 transition-colors text-lg w-full text-center"
             >
               Kontakt
             </button>
-            <button
-              onClick={() => handleNavigation('pakete')}
-              className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors text-lg w-full"
-            >
-              Jetzt Pakete ansehen
-            </button>
+              <button
+                onClick={() => handleNavigation('pakete')}
+                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors text-lg flex-1 text-center"
+              >
+                Jetzt Pakete ansehen
+              </button>
+              <Link
+                to="/vku"
+                className="bg-gray-100 text-gray-900 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors text-lg flex-1 text-center border border-gray-200"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                VKU Termin buchen
+              </Link>
           </div>
         </nav>
       </div>
