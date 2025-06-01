@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
                     <GraduationCap className="h-8 w-8 text-blue-600" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Verkehrskundeunterricht (VKU)</h3>
-                      <p className="text-sm text-gray-600">Professionelle Ausbildung in Winterthur</p>
+                      <p className="text-sm text-gray-600">Ausbildung in Winterthur</p>
                     </div>
                   </div>
                   <Link
