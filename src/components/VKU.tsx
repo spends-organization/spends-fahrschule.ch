@@ -39,11 +39,11 @@ const VKU: React.FC = () => {
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-10 md:mb-16 w-full max-w-none">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-10 md:mb-16 w-full max-w-none items-stretch">
           {facts.map((fact, idx) => (
             <AnimatedSection key={idx} delay={idx * 100}>
               <div
-                className="relative bg-white/90 border border-blue-100 rounded-xl md:rounded-2xl shadow-md md:shadow-xl p-4 md:p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 w-full"
+                className="relative bg-white/90 border border-blue-100 rounded-xl md:rounded-2xl shadow-md md:shadow-xl p-4 md:p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 w-full h-full min-h-[160px] md:min-h-[220px]"
               >
                 {fact.badge && (
                   <span className="absolute top-2 right-2 md:top-4 md:right-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-xs font-bold px-2 md:px-3 py-0.5 md:py-1 rounded-full shadow-md">{fact.badge}</span>

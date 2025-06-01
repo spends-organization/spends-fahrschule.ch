@@ -44,10 +44,10 @@ const VKUPage: React.FC = () => {
                 Buchen Sie jetzt Ihren Verkehrskundeunterricht in Winterthur. Professionelle Ausbildung für Ihre Fahrprüfung – exklusiv, persönlich, hochwertig.
               </p>
             </AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10 items-stretch">
               {facts.map((fact, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="relative bg-white/90 border border-blue-100 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300">
+                  <div className="relative bg-white/90 border border-blue-100 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 h-full min-h-[160px] md:min-h-[220px]">
                     {fact.badge && (
                       <span className="absolute top-4 right-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">{fact.badge}</span>
                     )}
