@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-24">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-white/70 to-white z-10" />
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
       <div className="container relative z-10 mx-auto px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl">
           <div className="flex flex-col">
-            <div className="mb-4">
+            <div className="mb-8">
               <img 
                 src="/official-logo.png" 
                 alt="Spend's Fahrschule Logo" 

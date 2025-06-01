@@ -48,20 +48,20 @@ const Header: React.FC = () => {
       });
     } else {
       // If we're on another page, navigate to home page
-    navigate('/');
+      navigate('/');
     }
   };
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <button onClick={handleLogoClick} className="flex items-center z-50">
             <img 
               src="/official-logo.png" 
               alt="Spend Fahrschule Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </button>
 
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
         className={`md:hidden fixed inset-0 bg-white transform transition-transform duration-300 ease-in-out z-40 ${
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
-        style={{ top: '80px' }}
+        style={{ top: '96px' }}
       >
         <nav className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center space-y-6">
@@ -161,19 +161,19 @@ const Header: React.FC = () => {
             >
               Kontakt
             </button>
-              <button
-                onClick={() => handleNavigation('pakete')}
-                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors text-lg flex-1 text-center"
-              >
-                Jetzt Pakete ansehen
-              </button>
-              <Link
-                to="/vku"
-                className="bg-gray-100 text-gray-900 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors text-lg flex-1 text-center border border-gray-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                VKU Termin buchen
-              </Link>
+            <button
+              onClick={() => handleNavigation('pakete')}
+              className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors text-lg flex-1 text-center"
+            >
+              Jetzt Pakete ansehen
+            </button>
+            <Link
+              to="/vku"
+              className="bg-gray-100 text-gray-900 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors text-lg flex-1 text-center border border-gray-200"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              VKU Termin buchen
+            </Link>
           </div>
         </nav>
       </div>
