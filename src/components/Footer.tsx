@@ -89,7 +89,10 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
-          <p>&copy; {currentYear} Spend's Fahrschule. Alle Rechte vorbehalten.</p>
+          <p className="text-sm flex flex-col sm:flex-row justify-center items-center gap-x-1">
+            <span>&copy; {currentYear} Spend's Fahrschule.</span>
+            <span>Alle Rechte vorbehalten.</span>
+          </p>
         </div>
       </div>
     </footer>
