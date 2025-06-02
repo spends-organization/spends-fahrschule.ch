@@ -46,11 +46,6 @@ const Advantages: React.FC = () => {
       icon: <CheckCircle className="h-6 w-6 text-blue-500" />,
       title: "Faire Preise und attraktive Pakete",
       description: "Wir bieten faire Preise und massgeschneiderte Pakete für jeden Bedarf und jedes Budget."
-    },
-    {
-      icon: <Globe className="h-6 w-6 text-blue-500" />,
-      title: "Mehrsprachiger Unterricht",
-      description: "Wir unterrichten in mehreren Sprachen: Deutsch, Englisch, Albanisch, Serbo-Kroatisch und Mazedonisch."
     }
   ];
 
