@@ -7,10 +7,10 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-24">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-white/70 to-white z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-white/80 to-white z-10" />
         <img 
           src="/hero-image.png" 
-          alt="Driving School" 
+          alt="Spend's Fahrschule Auto" 
           className="object-cover w-full h-full"
           loading="eager"
           width={1920}
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               <h1 className="sr-only">
                 Fahrschule Winterthur & Region
               </h1>
-              <p className="text-lg md:text-xl text-gray-80 font-semibold mb-4 max-w-2xl">
+              <p className="text-lg md:text-xl text-gray-800 font-semibold mb-4 max-w-2xl">
                 Professionelle Fahrausbildung in Winterthur, Effretikon, Bassersdorf und Frauenfeld - bei uns wird der Führerschein zum Erfolg!
               </p>
 
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* VKU Section */}
-              <div className="bg-blue-50 rounded-lg p-6 mb-6">
+              <div className="bg-blue-50/90 backdrop-blur-sm rounded-lg p-6 mb-6">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
                     <GraduationCap className="h-8 w-8 text-blue-600" />
