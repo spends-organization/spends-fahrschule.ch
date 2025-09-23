@@ -1,13 +1,14 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import AnimatedSection from '@/components/AnimatedSection';
-import { Calendar, Clock, GraduationCap, Users, CheckCircle, Star } from 'lucide-react';
+import ResponsiveImage from '@/components/ResponsiveImage';
+import { Calendar, Clock, GraduationCap, Users, CheckCircle } from 'lucide-react';
 
-const INFO_SECTION_HEIGHT = 200; // px, adjust as needed
+const INFO_SECTION_HEIGHT = 200;
 
 const facts = [
   {
-    icon: <Clock className="h-8 w-8 text-blue-700" />, // premium blue
+    icon: <Clock className="h-8 w-8 text-blue-700" />,
     title: '8 Lektionen',
     description: 'Intensiver Unterricht für nachhaltigen Lernerfolg',
   },
@@ -36,17 +37,33 @@ const VKUPage: React.FC = () => {
         {/* Hero Section */}
         <div className="bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
-            <AnimatedSection className="text-center mb-10">
+            <AnimatedSection className="text-center mb-8">
               <h1 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
                 Verkehrskunde&shy;unterricht (VKU)
               </h1>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-6">
                 Buchen Sie jetzt Ihren Verkehrskundeunterricht in Winterthur. Professionelle Ausbildung für Ihre Fahrprüfung – exklusiv, persönlich, hochwertig.
               </p>
+              <AnimatedSection delay={200} className="flex justify-center">
+                <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold text-lg md:text-xl px-6 py-2 rounded-full shadow-md border border-yellow-200">
+                  Preis: CHF 149
+                </span>
+              </AnimatedSection>
             </AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10 items-stretch">
+
+            <AnimatedSection delay={300} className="mb-16">
+              <div className="max-w-3xl mx-auto">
+                <ResponsiveImage
+                  src="/vku2.JPG"
+                  alt="VKU Unterricht bei Spend's Fahrschule"
+                  className="aspect-video rounded-2xl shadow-lg"
+                />
+              </div>
+            </AnimatedSection>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
               {facts.map((fact, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
+                <AnimatedSection key={idx} delay={idx * 100 + 400}>
                   <div className="relative bg-white/90 border border-blue-100 rounded-2xl shadow-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 h-full min-h-[160px] md:min-h-[220px]">
                     {fact.badge && (
                       <span className="absolute top-4 right-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">{fact.badge}</span>
@@ -58,16 +75,11 @@ const VKUPage: React.FC = () => {
                 </AnimatedSection>
               ))}
             </div>
-            <div className="flex justify-center mb-8">
-              <AnimatedSection delay={400}>
-                <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold text-lg md:text-xl px-6 py-2 rounded-full shadow-md border border-yellow-200">
-                  Preis: CHF 149
-                </span>
-              </AnimatedSection>
-            </div>
-            <AnimatedSection className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl p-8 text-center shadow-2xl mb-8">
-              <h2 className="text-2xl font-bold mb-2 text-white drop-shadow">Jetzt VKU-Termin sichern</h2>
-              <p className="text-blue-100 mb-4">Sichere dir deinen Platz in unserem VKU-Kurs über das untenstehende Formular.</p>
+
+            <AnimatedSection className="mb-8 text-center">
+              <p className="text-base md:text-lg text-gray-700">
+                Sie können Ihren VKU-Termin direkt über das untenstehende Formular buchen.
+              </p>
             </AnimatedSection>
           </div>
         </div>
@@ -86,4 +98,4 @@ const VKUPage: React.FC = () => {
   );
 };
 
-export default VKUPage; 
+export default VKUPage;

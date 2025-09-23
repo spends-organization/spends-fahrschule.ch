@@ -1,12 +1,13 @@
 import React from 'react';
 import { GraduationCap, Clock, Users, CheckCircle, Star } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import ResponsiveImage from './ResponsiveImage';
 import { Link } from 'react-router-dom';
 
 const VKU: React.FC = () => {
   const facts = [
     {
-      icon: <Clock className="h-8 w-8 text-blue-700" />, // premium blue
+      icon: <Clock className="h-8 w-8 text-blue-700" />,
       title: '8 Lektionen',
       description: 'Intensiver Unterricht für nachhaltigen Lernerfolg',
     },
@@ -32,16 +33,31 @@ const VKU: React.FC = () => {
     <section id="vku" className="section-padding relative overflow-x-hidden">
       <div className="absolute inset-0 w-screen h-full left-1/2 -translate-x-1/2 bg-gradient-to-br from-white via-blue-50 to-blue-100 pointer-events-none z-0" aria-hidden="true"></div>
       <div className="relative w-full px-2 md:px-0 md:container md:mx-auto max-w-none z-10">
-        <AnimatedSection className="text-center mb-16">
+        <AnimatedSection className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-tight">Verkehrskunde&shy;unterricht (VKU)</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-10">
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-6">
             Der VKU bei Spend's Fahrschule: Exklusiv, professionell und persönlich. Erleben Sie den Unterschied.
           </p>
+          <AnimatedSection delay={200} className="flex justify-center">
+            <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold text-lg md:text-xl px-6 py-2 rounded-full shadow-md border border-yellow-200">
+              Preis: CHF 149
+            </span>
+          </AnimatedSection>
+        </AnimatedSection>
+
+        <AnimatedSection delay={300} className="mb-16">
+          <div className="max-w-3xl mx-auto">
+            <ResponsiveImage
+              src="/vku1.JPG"
+              alt="VKU Unterricht bei Spend's Fahrschule"
+              className="aspect-video rounded-2xl shadow-lg"
+            />
+          </div>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-10 md:mb-16 w-full max-w-none items-stretch">
           {facts.map((fact, idx) => (
-            <AnimatedSection key={idx} delay={idx * 100}>
+            <AnimatedSection key={idx} delay={idx * 100 + 400}>
               <div
                 className="relative bg-white/90 border border-blue-100 rounded-xl md:rounded-2xl shadow-md md:shadow-xl p-4 md:p-8 flex flex-col items-center text-center hover:shadow-2xl transition-all duration-300 w-full h-full min-h-[160px] md:min-h-[220px]"
               >
@@ -54,13 +70,6 @@ const VKU: React.FC = () => {
               </div>
             </AnimatedSection>
           ))}
-        </div>
-        <div className="flex justify-center mb-10 md:mb-16">
-          <AnimatedSection delay={400}>
-            <span className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900 font-bold text-lg md:text-xl px-6 py-2 rounded-full shadow-md border border-yellow-200">
-              Preis: CHF 149
-            </span>
-          </AnimatedSection>
         </div>
 
         <AnimatedSection className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl p-10 text-center shadow-2xl">
@@ -82,4 +91,4 @@ const VKU: React.FC = () => {
   );
 };
 
-export default VKU; 
+export default VKU;

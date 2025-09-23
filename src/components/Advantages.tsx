@@ -1,6 +1,7 @@
 import React from 'react';
-import { Car, Calendar, CheckCircle, Users, Globe } from 'lucide-react';
+import { Car, Calendar, CheckCircle, Users } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
+import ResponsiveImage from './ResponsiveImage';
 import { cn } from '@/lib/utils';
 
 interface AdvantageCardProps {
@@ -59,7 +60,7 @@ const Advantages: React.FC = () => {
           </p>
         </AnimatedSection>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {advantages.map((advantage, index) => (
             <AdvantageCard
               key={index}
@@ -70,6 +71,19 @@ const Advantages: React.FC = () => {
             />
           ))}
         </div>
+
+        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 gap-8" delay={400}>
+          <ResponsiveImage
+            src="/auto1.jpg"
+            alt="Spend's Fahrschule Auto 1"
+            className="aspect-video"
+          />
+          <ResponsiveImage
+            src="/auto2.JPG"
+            alt="Spend's Fahrschule Auto 2"
+            className="aspect-video"
+          />
+        </AnimatedSection>
       </div>
     </section>
   );
