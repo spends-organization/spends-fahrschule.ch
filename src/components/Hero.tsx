@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-white/80 to-white z-10" />
         <img 
-          src="/hero-image.png" 
+          src="/auto1.jpg" 
           alt="Spend's Fahrschule Auto" 
           className="object-cover w-full h-full"
           loading="eager"
