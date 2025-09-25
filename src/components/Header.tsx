@@ -70,12 +70,11 @@ const Header: React.FC = () => {
           // VKU page: always white with shadow
           "md:bg-white md:shadow-md": !isHomePage
         },
-        // Fix for Chrome mobile browser nav overlap
         "z-50"
       )}
     >
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex justify-between items-center h-20">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <button onClick={handleLogoClick} className="flex items-center z-50">
             <img 
@@ -170,7 +169,7 @@ const Header: React.FC = () => {
           isMenuOpen ? "translate-y-0" : "-translate-y-full",
           "z-40"
         )}
-        style={{ top: '128px' }}
+        style={{ top: '96px' }}
       >
         <nav className="container mx-auto px-4 py-8">
           <div className="flex flex-col items-center space-y-6">
