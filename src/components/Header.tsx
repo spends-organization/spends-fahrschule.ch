@@ -59,7 +59,7 @@ const Header: React.FC = () => {
   return (
     <header 
       className={cn(
-        "fixed w-full z-50 transition-all duration-300",
+        "fixed w-full transition-all duration-300",
         // Mobile: always white with shadow
         "bg-white shadow-md",
         // Desktop: depends on page
@@ -69,7 +69,9 @@ const Header: React.FC = () => {
           "md:bg-white md:shadow-md": isHomePage && isScrolled,
           // VKU page: always white with shadow
           "md:bg-white md:shadow-md": !isHomePage
-        }
+        },
+        // Fix for Chrome mobile browser nav overlap
+        "z-50"
       )}
     >
       <div className="container mx-auto px-4 py-6">
@@ -163,9 +165,10 @@ const Header: React.FC = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "md:hidden fixed inset-0 transform transition-transform duration-300 ease-in-out z-40",
+          "md:hidden fixed inset-0 transform transition-transform duration-300 ease-in-out",
           "bg-white",
-          isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          isMenuOpen ? "translate-y-0" : "-translate-y-full",
+          "z-40"
         )}
         style={{ top: '128px' }}
       >
