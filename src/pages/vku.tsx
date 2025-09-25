@@ -35,8 +35,21 @@ const VKUPage: React.FC = () => {
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100" style={{ margin: 0, padding: 0 }}>
         {/* Hero Section */}
-        <div className="bg-transparent">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
+        <section className="relative h-[60vh] flex items-center overflow-hidden bg-white">
+          {/* Background */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-white/80 to-white z-10" />
+            <img 
+              src="/vku2.JPG" 
+              alt="VKU Unterricht bei Spend's Fahrschule" 
+              className="object-cover w-full h-full"
+              loading="eager"
+              width={1920}
+              height={1080}
+            />
+          </div>
+
+          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 pt-24">
             <AnimatedSection className="text-center mb-8">
               <h1 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
                 Verkehrskunde&shy;unterricht (VKU)
@@ -50,17 +63,11 @@ const VKUPage: React.FC = () => {
                 </span>
               </AnimatedSection>
             </AnimatedSection>
+          </div>
+        </section>
 
-            <AnimatedSection delay={300} className="mb-16">
-              <div className="max-w-3xl mx-auto">
-                <ResponsiveImage
-                  src="/vku2.JPG"
-                  alt="VKU Unterricht bei Spend's Fahrschule"
-                  className="aspect-video rounded-2xl shadow-lg"
-                />
-              </div>
-            </AnimatedSection>
-
+        <div className="bg-transparent">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
               {facts.map((fact, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100 + 400}>

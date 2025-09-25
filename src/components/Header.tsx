@@ -15,6 +15,7 @@ const Header: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial scroll position
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -52,10 +53,28 @@ const Header: React.FC = () => {
     }
   };
 
+  // Check if we're on the homepage
+  const isHomePage = location.pathname === '/';
+
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'} py-6`}>
+    <header 
+      className={cn(
+        "fixed w-full transition-all duration-300",
+        // Mobile: always white with shadow
+        "bg-white shadow-md",
+        // Desktop: depends on page
+        {
+          // Homepage: transparent at top, white when scrolled
+          "md:bg-transparent md:shadow-none": isHomePage && !isScrolled,
+          "md:bg-white md:shadow-md": isHomePage && isScrolled,
+          // VKU page: always white with shadow
+          "md:bg-white md:shadow-md": !isHomePage
+        },
+        "z-50"
+      )}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <button onClick={handleLogoClick} className="flex items-center z-50">
             <img 
@@ -69,31 +88,46 @@ const Header: React.FC = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => handleNavigation('vorteile')}
-              className="text-gray-800 hover:text-blue-600 transition-colors"
+              className={cn(
+                "transition-colors hover:text-blue-600",
+                isHomePage && !isScrolled ? "text-gray-900" : "text-gray-800"
+              )}
             >
               Vorteile
             </button>
             <button
               onClick={() => handleNavigation('pakete')}
-              className="text-gray-800 hover:text-blue-600 transition-colors"
+              className={cn(
+                "transition-colors hover:text-blue-600",
+                isHomePage && !isScrolled ? "text-gray-900" : "text-gray-800"
+              )}
             >
               Pakete
             </button>
             <button
               onClick={() => handleNavigation('vku')}
-              className="text-gray-800 hover:text-blue-600 transition-colors"
+              className={cn(
+                "transition-colors hover:text-blue-600",
+                isHomePage && !isScrolled ? "text-gray-900" : "text-gray-800"
+              )}
             >
               VKU
             </button>
             <button
               onClick={() => handleNavigation('faq')}
-              className="text-gray-800 hover:text-blue-600 transition-colors"
+              className={cn(
+                "transition-colors hover:text-blue-600",
+                isHomePage && !isScrolled ? "text-gray-900" : "text-gray-800"
+              )}
             >
               FAQ
             </button>
             <button
               onClick={() => handleNavigation('kontakt')}
-              className="text-gray-800 hover:text-blue-600 transition-colors"
+              className={cn(
+                "transition-colors hover:text-blue-600",
+                isHomePage && !isScrolled ? "text-gray-900" : "text-gray-800"
+              )}
             >
               Kontakt
             </button>
@@ -105,7 +139,12 @@ const Header: React.FC = () => {
             </button>
             <Link
               to="/vku"
-              className="bg-gray-100 text-gray-900 px-6 py-2 rounded-full hover:bg-gray-200 transition-colors border border-gray-200"
+              className={cn(
+                "text-gray-900 px-6 py-2 rounded-full transition-colors border",
+                isHomePage && !isScrolled
+                  ? "bg-white hover:bg-white/90 border-white"
+                  : "bg-gray-100 hover:bg-gray-200 border-gray-200"
+              )}
             >
               VKU Termin buchen
             </Link>
@@ -124,9 +163,12 @@ const Header: React.FC = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden fixed inset-0 bg-white transform transition-transform duration-300 ease-in-out z-40 ${
-          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
-        }`}
+        className={cn(
+          "md:hidden fixed inset-0 transform transition-transform duration-300 ease-in-out",
+          "bg-white",
+          isMenuOpen ? "translate-y-0" : "-translate-y-full",
+          "z-40"
+        )}
         style={{ top: '96px' }}
       >
         <nav className="container mx-auto px-4 py-8">
