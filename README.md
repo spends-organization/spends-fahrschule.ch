@@ -219,3 +219,5 @@ To run the maintenance script manually:
 ```bash
 /root/maintenance/server-maintenance.sh
 ```
+
+<!-- Security scan triggered at 2025-10-08 08:50:11 -->
