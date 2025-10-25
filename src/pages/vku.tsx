@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '@/components/Layout';
 import AnimatedSection from '@/components/AnimatedSection';
 import ResponsiveImage from '@/components/ResponsiveImage';
 import { Calendar, Clock, GraduationCap, Users, CheckCircle, ChevronDown } from 'lucide-react';
+
+declare global {
+  function gtag(...args: any[]): void;
+}
 
 const INFO_SECTION_HEIGHT = 200;
 
@@ -31,6 +35,16 @@ const facts = [
 ];
 
 const VKUPage: React.FC = () => {
+  useEffect(() => {
+    // Track VKU page view as conversion
+    gtag('event', 'vku_page_view', {
+      'event_category': 'conversion',
+      'event_label': 'VKU Page Visit',
+      'value': 149,
+      'currency': 'CHF'
+    });
+  }, []);
+
   const handleScrollToBooking = () => {
     const bookingSection = document.getElementById('vku-booking');
     if (bookingSection) {
