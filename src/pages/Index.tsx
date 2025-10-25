@@ -22,7 +22,7 @@ const Index: React.FC = () => {
       setTimeout(() => {
         const element = document.getElementById(state.scrollTo);
         if (element) {
-          const offset = 0;
+          const offset = 80;
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -43,10 +43,14 @@ const Index: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         <Advantages />
-        <Packages />
+        <div id="pakete">
+          <Packages />
+        </div>
         <VKU />
         <FAQ />
-        <Contact />
+        <div id="kontakt">
+          <Contact />
+        </div>
       </main>
       <Footer />
     </div>

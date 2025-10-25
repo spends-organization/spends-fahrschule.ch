@@ -4,6 +4,13 @@ import AnimatedSection from './AnimatedSection';
 import { formatPackageMessage } from '@/config/packages';
 import { contact } from '@/config/contact';
 
+declare global {
+  function gtag(...args: any[]): void;
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 interface SelectedPackage {
   title: string;
   price: string;
@@ -46,6 +53,22 @@ const Contact: React.FC = () => {
     }
     
     message += "Ich würde gerne mehr Informationen erhalten und einen Termin vereinbaren.";
+    
+    // Extract numeric price value for conversion tracking
+    const priceValue = selectedPackage ? parseFloat(selectedPackage.price.replace(/[^\d]/g, '')) : 0;
+    
+    // Send conversion event to GA4 via GTM dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'whatsapp_contact',
+      'event_category': 'conversion',
+      'event_label': selectedPackage ? selectedPackage.title : 'general_contact',
+      'value': priceValue,
+      'currency': 'CHF',
+      'custom_parameter_1': selectedPackage ? selectedPackage.price : 'general',
+      'conversion_id': 'AW-17059213090',
+      'conversion_label': 'ZmIDCPvelsYaEKLeu8Y_'
+    });
     
     // Add a timestamp to prevent WhatsApp caching
     const timestamp = new Date().getTime();
