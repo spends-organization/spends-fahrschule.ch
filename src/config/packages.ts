@@ -24,7 +24,7 @@ export const packages: Package[] = [
   },
   {
     title: "Go for it Paket",
-    price: "CHF\u00A0820",
+    price: "CHF\u00A0790",
     originalPrice: "CHF\u00A0900",
     description: "Unser meistgewähltes Paket für eine umfassende Ausbildung.",
     features: [
@@ -32,13 +32,14 @@ export const packages: Package[] = [
       "CHF\u00A082 pro Lektion (statt CHF\u00A090)",
       "Flexible Terminvereinbarung",
       "Moderne Fahrzeuge",
-      "Persönliche Betreuung"
+      "Persönliche Betreuung",
+      "Administrative Leistungen und Versicherung sind im Preis inbegriffen."
     ],
     popular: true
   },
   {
     title: "All in Paket",
-    price: "CHF\u00A01'200",
+    price: "CHF\u00A01'150",
     originalPrice: "CHF\u00A01'350",
     description: "Für alle, die Vollgas geben wollen.",
     features: [
@@ -46,7 +47,8 @@ export const packages: Package[] = [
       "CHF\u00A080 pro Lektion (statt CHF\u00A090)",
       "Flexible Terminvereinbarung",
       "Moderne Fahrzeuge",
-      "Persönliche Betreuung"
+      "Persönliche Betreuung",
+      "Administrative Leistungen und Versicherung sind im Preis inbegriffen."
     ],
     popular: false
   }
