@@ -51,6 +51,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "
             sudo rm -rf /var/cache/nginx/* &&
             sudo rm -rf /var/lib/nginx/cache/* &&
+            sudo find /var/www/spends-fahrschule.ch/assets -type f -name '*.js' -delete 2>/dev/null || true &&
+            sudo find /var/www/spends-fahrschule.ch/assets -type f -name '*.css' -delete 2>/dev/null || true &&
             sudo nginx -t &&
             sudo systemctl reload nginx &&
             sudo systemctl restart nginx" 
