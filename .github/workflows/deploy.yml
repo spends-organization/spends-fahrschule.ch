@@ -41,10 +41,10 @@ jobs:
       - name: Deploy to VPS
         run: |
           # Ensure target directory exists and has correct permissions
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "mkdir -p /var/www/your-app && chmod -R 755 /var/www/your-app"
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "mkdir -p /var/www/spends-fahrschule.ch && chmod -R 755 /var/www/spends-fahrschule.ch"
           
           # Deploy files
-          rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/your-app/
+          rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/spends-fahrschule.ch/
           
       - name: Clear Cache and Restart Nginx
         run: |

