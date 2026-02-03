@@ -99,8 +99,10 @@ yarn build
 
 2. Deploy the `dist` directory to your server:
 ```bash
-rsync -avz --delete dist/ user@your-server:/var/www/your-app/
+rsync -avz --delete dist/ root@91.200.102.173:/var/www/spends-fahrschule.ch/
 ```
+
+**Note:** The actual deployment directory is `/var/www/spends-fahrschule.ch` (not `/var/www/your-app` as shown in the workflow file).
 
 ## Configuration
 
@@ -157,6 +159,68 @@ Spend's Fahrschule
 - Website: [spends-fahrschule.ch](https://spends-fahrschule.ch)
 - Email: info@spends-fahrschule.ch
 - Phone: +41 76 430 56 58
+
+## Server Information
+
+### Production Server Details
+
+**Server Access:**
+- **IP Address**: `91.200.102.173`
+- **SSH User**: `root`
+- **OS**: Ubuntu 22.04.5 LTS
+
+**Website Location:**
+- **Website Directory**: `/var/www/spends-fahrschule.ch`
+- **Nginx Config**: `/etc/nginx/sites-available/spends-fahrschule.ch`
+- **Enabled Config**: `/etc/nginx/sites-enabled/spends-fahrschule.ch`
+
+**Services:**
+- **Web Server**: Nginx (auto-starts on boot: `enabled`)
+- **SSL Certificate**: Let's Encrypt (managed by Certbot)
+- **Domains**: `spends-fahrschule.ch` and `www.spends-fahrschule.ch`
+
+**Important Notes:**
+- ✅ Nginx is configured to auto-start after reboot
+- ✅ Website files are located in `/var/www/spends-fahrschule.ch`
+- ✅ SSL certificates are automatically renewed by Certbot
+- ⚠️ Server requires periodic updates and may need reboot after updates
+
+**Quick Server Commands:**
+```bash
+# Check Nginx status
+systemctl status nginx
+
+# Restart Nginx
+systemctl restart nginx
+
+# Check website directory
+ls -la /var/www/spends-fahrschule.ch
+
+# View Nginx configuration
+cat /etc/nginx/sites-available/spends-fahrschule.ch
+
+# Check SSL certificate
+certbot certificates
+```
+
+**Safe Update and Reboot Procedure:**
+```bash
+# 1. Check Nginx auto-start (should be 'enabled')
+systemctl is-enabled nginx
+
+# 2. Install updates
+apt update
+apt upgrade -y
+
+# 3. Reboot server (Nginx will auto-start)
+reboot
+
+# 4. After reboot, verify website is running
+systemctl status nginx
+curl -I https://spends-fahrschule.ch
+```
+
+**⚠️ Important:** The website will automatically be available after reboot because Nginx is configured to auto-start. No manual intervention needed.
 
 ## Server Maintenance
 
