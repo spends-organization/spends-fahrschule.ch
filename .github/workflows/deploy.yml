@@ -68,8 +68,11 @@ jobs:
             echo '=== Clearing all caches ===' &&
             sudo rm -rf /var/cache/nginx/* &&
             sudo rm -rf /var/lib/nginx/cache/* &&
-            echo '=== Setting no-cache headers ===' &&
-            sudo sed -i 's/add_header Cache-Control.*/# Cache-Control headers/' /etc/nginx/sites-available/spends-fahrschule.ch 2>/dev/null || true &&
+            echo '=== Setting proper cache headers ===' &&
+            sudo sed -i '/location \/assets\//,/^[[:space:]]*}/ { /add_header Cache-Control/d; /expires/d; }' /etc/nginx/sites-available/spends-fahrschule.ch 2>/dev/null || true &&
+            sudo sed -i '/location \/assets\//a\        add_header Cache-Control \"public, max-age=31536000, immutable\";' /etc/nginx/sites-available/spends-fahrschule.ch 2>/dev/null || true &&
+            sudo sed -i '/location \//,/^[[:space:]]*}/ { /add_header Cache-Control/d; /expires/d; }' /etc/nginx/sites-available/spends-fahrschule.ch 2>/dev/null || true &&
+            sudo sed -i '/location \//a\        add_header Cache-Control \"no-cache, no-store, must-revalidate\";' /etc/nginx/sites-available/spends-fahrschule.ch 2>/dev/null || true &&
             echo '=== Restarting Nginx ===' &&
             sudo nginx -t &&
             sudo systemctl reload nginx &&
