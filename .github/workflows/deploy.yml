@@ -46,13 +46,20 @@ jobs:
           # Deploy files
           rsync -avz --delete ./dist/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/var/www/spends-fahrschule.ch/
           
-      - name: Clear Cache and Restart Nginx
+      - name: Verify deployment and clear cache
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "
+            echo '=== Checking deployed files ===' &&
+            ls -lah /var/www/spends-fahrschule.ch/assets/ &&
+            echo '' &&
+            echo '=== Checking index.html ===' &&
+            head -20 /var/www/spends-fahrschule.ch/index.html | grep -E '(index-|assets/)' &&
+            echo '' &&
+            echo '=== Clearing all caches ===' &&
             sudo rm -rf /var/cache/nginx/* &&
             sudo rm -rf /var/lib/nginx/cache/* &&
-            sudo find /var/www/spends-fahrschule.ch/assets -type f -name '*.js' -delete 2>/dev/null || true &&
-            sudo find /var/www/spends-fahrschule.ch/assets -type f -name '*.css' -delete 2>/dev/null || true &&
+            echo '=== Restarting Nginx ===' &&
             sudo nginx -t &&
             sudo systemctl reload nginx &&
-            sudo systemctl restart nginx" 
+            sudo systemctl restart nginx &&
+            echo '=== Deployment complete! ==='" 
