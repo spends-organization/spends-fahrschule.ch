@@ -55,9 +55,21 @@ jobs:
             echo '=== Checking index.html ===' &&
             head -20 /var/www/spends-fahrschule.ch/index.html | grep -E '(index-|assets/)' &&
             echo '' &&
+            echo '=== Verifying prices in JS file ===' &&
+            JS_FILE=\$(ls /var/www/spends-fahrschule.ch/assets/index-*.js 2>/dev/null | head -1) &&
+            if [ -f \"\$JS_FILE\" ]; then
+              echo \"Checking file: \$JS_FILE\" &&
+              grep -o 'CHF.*79.*Lektion\|CHF.*77.*Lektion' \"\$JS_FILE\" | head -2 || echo 'Prices not found in JS file!' &&
+              grep -o '790\|1150' \"\$JS_FILE\" | head -2 || echo 'Package prices not found!'
+            else
+              echo 'ERROR: JS file not found!'
+            fi &&
+            echo '' &&
             echo '=== Clearing all caches ===' &&
             sudo rm -rf /var/cache/nginx/* &&
             sudo rm -rf /var/lib/nginx/cache/* &&
+            echo '=== Setting no-cache headers ===' &&
+            sudo sed -i 's/add_header Cache-Control.*/# Cache-Control headers/' /etc/nginx/sites-available/spends-fahrschule.ch 2>/dev/null || true &&
             echo '=== Restarting Nginx ===' &&
             sudo nginx -t &&
             sudo systemctl reload nginx &&
