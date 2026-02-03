@@ -51,4 +51,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "
             sudo rm -rf /var/cache/nginx/* &&
             sudo rm -rf /var/lib/nginx/cache/* &&
+            sudo nginx -t &&
+            sudo systemctl reload nginx &&
             sudo systemctl restart nginx" 

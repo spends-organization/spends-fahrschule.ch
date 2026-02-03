@@ -7,6 +7,7 @@ export interface Package {
   popular?: boolean;
 }
 
+// Package configurations with updated pricing
 export const packages: Package[] = [
   {
     title: "Easy Start Paket",
