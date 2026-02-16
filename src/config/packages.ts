@@ -16,7 +16,7 @@ export const packages: Package[] = [
     description: "Perfekt für den Einstieg in die Fahrausbildung.",
     features: [
       "5 Fahrstunden",
-      "CHF\u00A059 pro Lektion",
+      "CHF 59 pro Lektion",
       "Flexible Terminvereinbarung",
       "Moderne Fahrzeuge",
       "Persönliche Betreuung",
@@ -31,7 +31,7 @@ export const packages: Package[] = [
     description: "Unser meistgewähltes Paket für eine umfassende Ausbildung.",
     features: [
       "10 Fahrstunden",
-      "CHF\u00A079 pro Lektion (statt CHF\u00A090)",
+      "CHF 79 pro Lektion (statt CHF\u00A090)",
       "Flexible Terminvereinbarung",
       "Moderne Fahrzeuge",
       "Persönliche Betreuung",
@@ -46,7 +46,7 @@ export const packages: Package[] = [
     description: "Für alle, die Vollgas geben wollen.",
     features: [
       "15 Fahrstunden",
-      "CHF\u00A077 pro Lektion (statt CHF\u00A090)",
+      "CHF 77 pro Lektion (statt CHF\u00A090)",
       "Flexible Terminvereinbarung",
       "Moderne Fahrzeuge",
       "Persönliche Betreuung",
