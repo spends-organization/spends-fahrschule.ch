@@ -88,22 +88,6 @@ The following secrets must be set in your GitHub repository:
 - `SERVER_HOST`: Server IP address or domain
 - `SERVER_USERNAME`: SSH username (default: root)
 
-### Manual Deployment
-
-1. Build the project:
-```bash
-npm run build
-# or
-yarn build
-```
-
-2. Deploy the `dist` directory to your server:
-```bash
-rsync -avz --delete dist/ root@91.200.102.173:/var/www/spends-fahrschule.ch/
-```
-
-**Note:** The actual deployment directory is `/var/www/spends-fahrschule.ch` (not `/var/www/your-app` as shown in the workflow file).
-
 ## Configuration
 
 ### Environment Variables
@@ -163,12 +147,6 @@ Spend's Fahrschule
 ## Server Information
 
 ### Production Server Details
-
-**Server Access:**
-- **IP Address**: `91.200.102.173`
-- **SSH User**: `root`
-- **OS**: Ubuntu 22.04.5 LTS
-
 **Website Location:**
 - **Website Directory**: `/var/www/spends-fahrschule.ch`
 - **Nginx Config**: `/etc/nginx/sites-available/spends-fahrschule.ch`
@@ -232,7 +210,6 @@ The repository includes two maintenance scripts to help keep the server healthy 
    - Monitors disk space usage (warns if above 80%)
    - Checks if Nginx is running and restarts if needed
    - Installs security updates automatically
-   - Sends status emails to development.laki@gmail.com
    - Logs all activities to `/var/log/server-maintenance.log`
 
 2. `setup-maintenance.sh`: One-time setup script that:
@@ -271,7 +248,6 @@ crontab -l
 ### Logs and Monitoring
 
 - Maintenance logs: `/var/log/server-maintenance.log`
-- Status emails are sent to development.laki@gmail.com after each run
 - Email status types:
   - SUCCESS: Everything is normal
   - WARNING: Disk space is above 80%
