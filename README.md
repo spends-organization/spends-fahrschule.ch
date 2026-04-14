@@ -115,11 +115,4 @@ export const packages = [
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
-
-Spend's Fahrschule
-- Website: [spends-fahrschule.ch](https://spends-fahrschule.ch)
-- Email: info@spends-fahrschule.ch
-- Phone: +41 76 430 56 58
-
 <!-- Security scan triggered at 2025-10-08 08:50:11 -->
