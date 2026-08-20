@@ -13,7 +13,17 @@ declare global {
  * PLATZHALTER: Vor dem Live-Gang durch den echten Cal.com-Link ersetzen,
  * z.B. "spends-fahrschule/probelektion".
  */
-const CALCOM_LINK = 'PLATZHALTER-CALCOM-LINK';
+const CALCOM_LINK = 'lazar-petrovic-uxtx1v/gratis-probelektion';
+
+/**
+ * Google-Ads-Conversion-Label für die Probelektions-Buchung.
+ * PLATZHALTER-LABEL: durch das echte Conversion-Label aus Google Ads ersetzen
+ * (Format: AW-17059213090/xxxxxxxxxxxxxxxxxxx). Solange hier noch der
+ * Platzhalter steht, wird KEINE Ads-Conversion an Google gesendet – so kann
+ * gefahrlos getestet werden.
+ */
+const ADS_CONVERSION_SEND_TO = 'AW-17059213090/PLATZHALTER-LABEL';
+const ADS_CONVERSION_ENABLED = !ADS_CONVERSION_SEND_TO.includes('PLATZHALTER');
 
 const highlights = [
   {
@@ -66,14 +76,22 @@ const Buchung: React.FC = () => {
       api('on', {
         action: 'bookingSuccessful',
         callback: () => {
-          // Google Ads Conversion.
-          // PLATZHALTER-LABEL: durch das echte Conversion-Label aus Google Ads
-          // ersetzen (Format: AW-17059213090/xxxxxxxxxxxxxxxxxxx).
-          gtag('event', 'conversion', {
-            send_to: 'AW-17059213090/PLATZHALTER-LABEL',
-          });
+          // Google Ads Conversion – wird nur gesendet, wenn ein echtes
+          // Conversion-Label hinterlegt ist (siehe ADS_CONVERSION_SEND_TO).
+          // Solange der Platzhalter drinsteht, feuert hier bewusst nichts,
+          // damit beim Testen keine kaputte Conversion an Google geht.
+          if (ADS_CONVERSION_ENABLED) {
+            gtag('event', 'conversion', {
+              send_to: ADS_CONVERSION_SEND_TO,
+            });
+          } else {
+            console.warn(
+              '[Probelektion] Ads-Conversion übersprungen: PLATZHALTER-LABEL noch nicht ersetzt.'
+            );
+          }
 
           // Zusätzliches GA4-Event zur Auswertung im GA4-Property (G-LB95BFPW7W).
+          // Feuert unabhängig vom Ads-Label, da es nur ins GA4-Property geht.
           gtag('event', 'probelektion_gebucht', {
             event_category: 'conversion',
             event_label: 'Gratis Probelektion',
