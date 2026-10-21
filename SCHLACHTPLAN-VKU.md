@@ -133,3 +133,26 @@ Läuft gut (105 Conversions, CHF 46.50 pro Stück), ist aber durch das Budget be
 - [ ] **Bericht «Suchbegriff-Statistiken»** monatlich prüfen.
 - [ ] **Neue Startseite** als Zielseite, sobald live.
 - [ ] **Google-Profil** mit dem Ads-Konto verknüpfen (Standort-Erweiterung).
+
+## 11. Notiz: Kann man fertige VKU-Anmeldungen im asa-Fenster messen?
+
+Geprüft am 21.10.2026 im Code des asa-Buchungssystems (`vku-pgs.asa.ch`, Software von KYBERNA / ky2help, Version v7.4.32, Datei `/js/public.js`, Funktion `kyJS.addToCourse`).
+
+**Ergebnis: Nein, nicht mit dem heutigen System.**
+- Nach einer erfolgreichen Anmeldung zeigt asa nur eine Meldung im eigenen Fenster an (`data[0] == 'OK'`).
+- Es gibt **keine Weiterleitung** auf eine eigene Danke-Seite.
+- Es gibt **keine Nachricht** an die Seite, die das Fenster einbettet (kein `postMessage`).
+- Es gibt **keinen eigenen Tracking-Code** (Google Ads oder Analytics) im asa-System.
+- Der Browser verbietet aus Sicherheitsgründen, in das fremde Fenster hineinzuschauen.
+
+**Was wir stattdessen messen:**
+1. Klick auf «Jetzt VKU-Platz buchen» (öffnet asa im neuen Tab) → Hauptziel in Google Ads.
+2. Klick ins eingebettete Fenster (Fokus-Erkennung) → Zusatz-Signal «VKU-Interesse».
+3. Jeden Monat die tatsächlichen Anmeldungen aus dem asa-System mit den Klicks vergleichen.
+
+**Für die Fahrschule, bei asa / KYBERNA nachfragen:**
+- Kann nach der Anmeldung auf eine eigene Seite weitergeleitet werden (z. B. `spends-fahrschule.ch/vku/danke`)?
+- Kann das System ein Google-Ads- oder Analytics-Tag einbinden?
+- Gibt es eine monatliche Liste der Anmeldungen (Export), am besten mit der Angabe, wie die Person auf die Fahrschule gekommen ist?
+
+Wenn asa eine Weiterleitung anbietet, zählen wir echte, fertige Anmeldungen als Conversion.
