@@ -156,3 +156,12 @@ Geprüft am 21.10.2026 im Code des asa-Buchungssystems (`vku-pgs.asa.ch`, Softwa
 - Gibt es eine monatliche Liste der Anmeldungen (Export), am besten mit der Angabe, wie die Person auf die Fahrschule gekommen ist?
 
 Wenn asa eine Weiterleitung anbietet, zählen wir echte, fertige Anmeldungen als Conversion.
+
+### 11.1 Online-Recherche API (22.10.2026)
+
+- **Keine öffentliche API** für SARI VKU/PGS gefunden (asa / KYBERNA AG, Vaduz). Offiziell dokumentiert ist nur die iframe-Schnittstelle (Anleitung v1.6, 10.04.2017). Darin steht, dass man mit dem iframe «keine eigene Abfrage zu einem Webservice schreiben» muss. Ein Webservice existiert also wohl, ist aber nicht öffentlich beschrieben. Bei KYBERNA nachfragen: info@kyberna.com, +423 238 22 22.
+- **Wichtiger Fund:** Bei jeder Anmeldung über das iframe bekommt die Person automatisch eine E-Mail, und **die Fahrschule erhält eine Kopie**. Den Zusatztext dieser E-Mail kann die Fahrschule selbst bestimmen (SARI → Einstellungen → «E-Mail-Text für Kursanmeldung»).
+- **Idee 1, Zählung:** Die Kopie-E-Mails sind eine verlässliche Zählung aller Anmeldungen. Optional automatisch zählen, indem die Kopien an eine eigene Adresse weitergeleitet werden.
+- **Idee 2, Conversion über den E-Mail-Text:** Im Zusatztext einen Link einfügen, z. B. «Jetzt gratis Probelektion sichern» → `spends-fahrschule.ch/vku/danke`. Der Besuch dieser Seite löst die Conversion «VKU angemeldet» aus. Google kann sie der Werbung nur zuordnen, wenn die E-Mail auf demselben Gerät und im selben Browser geöffnet wird. Die Zählung ist also unvollständig, aber echt.
+- **Idee 3, später prüfen:** Hochladen der Anmeldungen (gehashte E-Mail-Adressen) als Offline-Conversions in Google Ads. Ob das ohne eigenes Formular funktioniert, ist nicht geklärt.
+- Laut Anleitung gibt es auch die Adresse `iframe.vku-pgs.asa.ch` und die Ansichten `extended` und `all`.
