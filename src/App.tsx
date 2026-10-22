@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import VKUPage from "./pages/vku";
 import Pakete from "./pages/Pakete";
 import Kontakt from "./pages/Kontakt";
+import Buchung from "./pages/Buchung";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Impressum from "./components/Impressum";
 import ScrollToTop from './components/ScrollToTop';
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/vku" element={<VKUPage />} />
             <Route path="/pakete" element={<Pakete />} />
+            <Route path="/buchung" element={<Buchung />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/datenschutz" element={<PrivacyPolicy />} />
             <Route path="/impressum" element={<Impressum />} />

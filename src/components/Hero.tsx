@@ -76,9 +76,16 @@ const Hero: React.FC = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/buchung"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-500 text-white font-medium rounded-full transition-all hover:bg-blue-600 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-blue-500/20"
+                >
+                  Gratis Probelektion buchen
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
                 <a
                   href="#pakete"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-500 text-white font-medium rounded-full transition-all hover:bg-blue-600 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-blue-500/20"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-gray-100 text-gray-900 font-medium rounded-full transition-all hover:bg-gray-200 hover:translate-y-[-2px] hover:shadow-lg"
                 >
                   Jetzt Pakete ansehen
                   <ArrowRight className="ml-2 h-5 w-5" />

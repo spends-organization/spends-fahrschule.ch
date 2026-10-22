@@ -6,9 +6,6 @@ import { contact } from '@/config/contact';
 declare global {
   function gtag(...args: any[]): void;
   function gtag_report_conversion(url: string): boolean;
-  interface Window {
-    dataLayer: any[];
-  }
 }
 
 interface ModalProps {
@@ -79,26 +76,10 @@ Können wir einen Termin für die Fahrstunden vereinbaren?`;
                 href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  
-                  // Extract numeric price value for conversion tracking
-                  const priceValue = parseFloat(selectedPackage.price.replace(/[^\d]/g, ''));
-                  
-                  // Send conversion event to GA4 via GTM dataLayer
-                  console.log('Sending GTM conversion event:', selectedPackage.title, 'Value:', priceValue);
-                  window.dataLayer = window.dataLayer || [];
-                  window.dataLayer.push({
-                    'event': 'whatsapp_contact',
-                    'event_category': 'conversion',
-                    'event_label': selectedPackage.title,
-                    'value': priceValue,
-                    'currency': 'CHF',
-                    'custom_parameter_1': selectedPackage.price,
-                    'conversion_id': 'AW-17059213090',
-                    'conversion_label': 'ZmIDCPvelsYaEKLeu8Y_'
-                  });
-                  console.log('GTM event sent successfully with value:', priceValue);
-                  
-                  // Also keep the existing Google Ads conversion tracking
+
+                  // Google Ads Conversion beim WhatsApp-Klick. Bleibt bestehen,
+                  // wird in Google Ads künftig nur noch als sekundäre Conversion
+                  // gewertet (primär ist die Probelektions-Buchung via /buchung).
                   gtag_report_conversion(e.currentTarget.href);
                 }}
                 target="_blank"
