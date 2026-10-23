@@ -93,6 +93,17 @@ const Footer: React.FC = () => {
             <span>&copy; {currentYear} Spend's Fahrschule.</span>
             <span>Alle Rechte vorbehalten.</span>
           </p>
+          <p className="text-xs mt-2">
+            Website:{' '}
+            <a
+              href="https://www.laki-development.ch"
+              target="_blank"
+              rel="noopener"
+              className="hover:text-blue-600 transition-colors"
+            >
+              Laki Development
+            </a>
+          </p>
         </div>
       </div>
     </footer>
